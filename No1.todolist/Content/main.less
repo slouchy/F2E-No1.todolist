@@ -1,4 +1,10 @@
-﻿.Title() {
+﻿@CommonColor: #00408B;
+@WarningColor: #D0021B;
+@HighlighyColor: #F5A623;
+@BgColor: #4A90E2;
+@BgWarning: #FFF2DC;
+
+.Title() {
     font-size: 24px;
     font-family: 'Roboto Medium', sans-serif;
     color: #000;
@@ -35,28 +41,60 @@
 }
 
 .BgColor() {
-    background-color: #4A90E2;
+    background-color: @BgColor;
 }
 
 
 .BgWarmingColor() {
-    background-color: #FFF2DC;
+    background-color: @BgWarning;
 }
 
 .FontCommonColor() {
-    color: #00408B;
+    color: @CommonColor;
 }
 
 .FontWaringColor() {
-    color: #D0021B;
+    color: @WarningColor;
 }
 
 .FontHighlightColor() {
-    color: #F5A623;
+    color: @HighlighyColor;
 }
 
 
 
 body {
     background-color: #e1e1e1;
+
+    header {
+        .BgColor();
+        height: 50px;
+        text-align: center;
+
+        .tabs {
+            .Title();
+            .FontCommonColor();
+            display: inline-block;
+            width: 140px;
+            height: 45px;
+            cursor: pointer;
+
+            &__activate {
+                color: #ffffff;
+                border-bottom: 5px solid @CommonColor;
+            }
+
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+
+    .main {
+        display: none;
+
+        &__activate {
+            display: block;
+        }
+    }
 }
