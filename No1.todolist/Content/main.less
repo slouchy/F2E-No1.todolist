@@ -3,6 +3,8 @@
 @HighlighyColor: #F5A623;
 @BgColor: #4A90E2;
 @BgWarning: #FFF2DC;
+@BgTask: #e1e1e1;
+@PageWidth: 480px;
 
 .Title() {
     font-size: 24px;
@@ -36,7 +38,7 @@
 
 .Status() {
     font-size: 24px;
-    font-family: 'Roboto Italic', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #c8c8c8;
 }
 
@@ -61,6 +63,85 @@
     color: @HighlighyColor;
 }
 
+input[placeholder] {
+    .PlaceHolder();
+}
+
+.checkbox * {
+    cursor: pointer;
+}
+
+.checkbox {
+    padding-left: 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+}
+
+.checkbox label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+}
+
+.checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: 2px;
+    margin-left: -21px;
+    padding-left: 3px;
+    padding-top: 1px;
+    font-size: 11px;
+    color: #555555;
+}
+
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    background-color: @BgTask;
+}
+
+
+.checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e013";
+}
+
+.checkbox input[type="checkbox"]:checked + label::after {
+    color: #fff;
+}
+
+.checkbox input[type="checkbox"] + label::before {
+    background-color: #fff;
+    border-color: @BgColor;
+}
+
+.checkbox input[type="checkbox"]:checked + label::before {
+    background-color: @BgColor;
+    border-color: @BgColor;
+}
 
 
 body {
@@ -90,11 +171,65 @@ body {
         }
     }
 
+    .input-group {
+        padding-top: 15px;
+        margin: 0px auto;
+        width: @PageWidth;
+    }
+
     .main {
         display: none;
+        padding-top: 15px;
 
         &__activate {
             display: block;
+        }
+
+        &-content {
+            margin: 0px auto;
+            width: @PageWidth;
+
+            &-task {
+                &-ul {
+                    &-item {
+                        padding: 5px;
+                        background-color: #f2f2f2;
+                        border-radius: 3px;
+
+                        .task-list {
+                            display: inline-block;
+
+                            &-checkbox {
+                                margin-left: 20px;
+                                width: 30px;
+                            }
+
+                            &-txt {
+                                width: 300px;
+
+                                span {
+                                    .Subtitele();
+                                }
+
+                                &__completed {
+                                    span{
+                                        .Status();
+                                    }
+                                    text-decoration: line-through;
+                                }
+                            }
+
+                            &-button {
+                                width: 85px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-remark {
+                .Remark();
+            }
         }
     }
 }
