@@ -36,6 +36,11 @@
             $(this).parents(".main-content-task-ul-item").find(".task-list-txt").removeClass("task-list-txt__completed");
         }
 
+        let taskLeftCount = $(this).parents("ul").find("input[type='checkbox']").not(":checked").length;
+        let taskCompletedCount = $(this).parents("ul").find("input[type='checkbox']:checked").length;
+        $(this).parents(".main").find(".main-content-remark-count").html(taskLeftCount);
+        $(this).parents(".main").find(".main-content-remark-count-completed").html(taskCompletedCount);
+        
         // Do Save task Status
     });
 
