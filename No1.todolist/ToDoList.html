@@ -8,161 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="Content/main.css" />
-    <style>
-        input[placeholder] {
-  font-size: 16px;
-  font-family: 'Roboto Regular', sans-serif;
-  color: #757575;
-}
-.checkbox * {
-  cursor: pointer;
-}
-.checkbox {
-  padding-left: 20px;
-  width: 24px;
-  height: 24px;
-}
-.checkbox label {
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  padding-left: 5px;
-}
-.checkbox label::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 0;
-  margin-left: -20px;
-  border: 1px solid #555;
-  border-radius: 3px;
-  background-color: #fff;
-  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-  -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-  transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-}
-.checkbox label::after {
-  display: inline-block;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 0;
-  top: 2px;
-  margin-left: -21px;
-  padding-left: 3px;
-  padding-top: 1px;
-  font-size: 11px;
-  color: #555555;
-}
-.checkbox input[type="checkbox"] {
-  opacity: 0;
-  z-index: 1;
-  width: 20px;
-  height: 20px;
-  background-color: #e1e1e1;
-}
-.checkbox input[type="checkbox"]:checked + label::after {
-  font-family: 'Glyphicons Halflings';
-  content: "\e013";
-}
-.checkbox input[type="checkbox"]:checked + label::after {
-  color: #fff;
-}
-.checkbox input[type="checkbox"] + label::before {
-  background-color: #fff;
-  border-color: #4A90E2;
-}
-.checkbox input[type="checkbox"]:checked + label::before {
-  background-color: #4A90E2;
-  border-color: #4A90E2;
-}
-body {
-  background-color: #e1e1e1;
-}
-body header {
-  background-color: #4A90E2;
-  height: 50px;
-  text-align: center;
-}
-body header .tabs {
-  font-size: 24px;
-  font-family: 'Roboto Medium', sans-serif;
-  color: #000;
-  color: #00408B;
-  display: inline-block;
-  width: 140px;
-  height: 45px;
-  cursor: pointer;
-}
-body header .tabs__activate {
-  color: #ffffff;
-  border-bottom: 5px solid #00408B;
-}
-body header .tabs:hover {
-  color: #ffffff;
-}
-body .input-group {
-  padding-top: 15px;
-  margin: 0px auto;
-  width: 480px;
-}
-body .main {
-  display: none;
-  padding-top: 15px;
-}
-body .main__activate {
-  display: block;
-}
-body .main-content {
-  margin: 0px auto;
-  width: 480px;
-}
-body .main-content-task-ul-item {
-  padding: 5px;
-  background-color: #f2f2f2;
-  border-radius: 3px;
-  margin: 8px 0px;
-}
-body .main-content-task-ul-item .task-list {
-  display: inline-block;
-}
-body .main-content-task-ul-item .task-list-checkbox {
-  margin-left: 20px;
-  width: 30px;
-}
-body .main-content-task-ul-item .task-list-txt {
-  width: 300px;
-}
-body .main-content-task-ul-item .task-list-txt span {
-  font-size: 20px;
-  font-family: 'Roboto Medium', sans-serif;
-  color: #000;
-}
-body .main-content-task-ul-item .task-list-txt__completed {
-  text-decoration: line-through;
-}
-body .main-content-task-ul-item .task-list-txt__completed span {
-  font-size: 24px;
-  font-family: 'Roboto', sans-serif;
-  color: #c8c8c8;
-}
-body .main-content-task-ul-item .task-list-button {
-  width: 85px;
-}
-body .main-content-task-ul-item .task-list-button__highlight {
-  color: #F5A623;
-}
-body .main-content-task-ul-item__highlight {
-  background-color: #FFF2DC;
-}
-body .main-content-remark {
-  font-size: 16px;
-  font-family: 'Roboto Italic', sans-serif;
-  color: #757575;
-}
-    </style>
+
 </head>
 <body>
     <header>
@@ -171,7 +17,69 @@ body .main-content-remark {
         <div class="tabs tabs-completed">Completed</div>
     </header>
     <div class="input-group">
-        <input type="text" class="form-control glyphicon input-group-txt" placeholder="&#x2b Add Task">
+        <div class="input-group-inputs">
+            <input type="text" class="form-control glyphicon input-group-txt" placeholder="&#x2b Add Task">
+        </div>
+        <div class="input-group-detail">
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-11">
+                    <span class="glyphicon glyphicon-calendar">&nbsp;</span>
+                    <span class="input-group-detail-title">Deadline</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-5">
+                    <input type="date" class="form-control input-group-detail-txt-date" placeholder="yyyy/MM/dd" />
+                </div>
+                <div class="col-xs-4">
+                    <input type="time" class="form-control input-group-detail-txt-time" placeholder="HH:mm" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-11">
+                    <span class="glyphicon glyphicon-file">&nbsp;</span>
+                    <span class="input-group-detail-title">File</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-10">
+                    <button class="btn btn-default">
+                        <span class="glyphicon glyphicon-plus-sign"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-11">
+                    <span class="glyphicon glyphicon-comment">&nbsp;</span>
+                    <span class="input-group-detail-title">Comment</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-10">
+                    <textarea class="input-group-detail-comment" placeholder="Type your memo here"></textarea>
+                </div>
+            </div>
+            <div>
+                <ul class="nav nav-justified">
+                    <li>
+                        <button class="btn btn-default input-group-detail-btn input-group-detail-btn__cancel">
+                            <span class="glyphicon glyphicon-remove"></span>
+                            Cancel
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-common input-group-detail-btn input-group-detail-btn__add"><span class="glyphicon glyphicon-plus"></span>Add Task</button>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="main main-tabs-tasks main__activate">
         <div class="main-content">
@@ -193,6 +101,18 @@ body .main-content-remark {
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                         </div>
+                        <div class="task-list task-list-detail">
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                <span class="task-list-detail-item-txt">5/14</span>
+                            </div>
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-file">&nbsp;</span>
+                            </div>
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-comment">&nbsp;</span>
+                            </div>
+                        </div>
                     </li>
                     <li class="main-content-task-ul-item main-content-task-ul-item__highlight">
                         <div class="task-list task-list-checkbox task-list-checkbox checkbox">
@@ -210,22 +130,13 @@ body .main-content-remark {
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                         </div>
-                    </li>
-                    <li class="main-content-task-ul-item">
-                        <div class="task-list task-list-checkbox task-list-checkbox checkbox">
-                            <input type="checkbox" class="checkbox" />
-                            <label></label>
-                        </div>
-                        <div class="task-list task-list-txt task-list-txt">
-                            <span>Typing Something</span>
-                        </div>
-                        <div class="task-list task-list-button task-list-button">
-                            <button type="button" class="btn btn-default btn-highlight">
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </button>
-                            <button type="button" class="btn btn-default btn-edit">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
+                        <div class="task-list task-list-detail">
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-file">&nbsp;</span>
+                            </div>
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-comment">&nbsp;</span>
+                            </div>
                         </div>
                     </li>
                     <li class="main-content-task-ul-item">
@@ -243,6 +154,34 @@ body .main-content-remark {
                             <button type="button" class="btn btn-default btn-edit">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
+                        </div>
+                        <div class="task-list task-list-detail">
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                <span class="task-list-detail-item-txt">5/14</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="main-content-task-ul-item">
+                        <div class="task-list task-list-checkbox task-list-checkbox checkbox">
+                            <input type="checkbox" class="checkbox" />
+                            <label></label>
+                        </div>
+                        <div class="task-list task-list-txt task-list-txt">
+                            <span>Typing Something</span>
+                        </div>
+                        <div class="task-list task-list-button task-list-button">
+                            <button type="button" class="btn btn-default btn-highlight">
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </button>
+                            <button type="button" class="btn btn-default btn-edit">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                        </div>
+                        <div class="task-list task-list-detail">
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-comment">&nbsp;</span>
+                            </div>
                         </div>
                     </li>
                     <li class="main-content-task-ul-item">
@@ -287,6 +226,18 @@ body .main-content-remark {
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                         </div>
+                        <div class="task-list task-list-detail">
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                <span class="task-list-detail-item-txt">5/14</span>
+                            </div>
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-file">&nbsp;</span>
+                            </div>
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-comment">&nbsp;</span>
+                            </div>
+                        </div>
                     </li>
                     <li class="main-content-task-ul-item main-content-task-ul-item__highlight">
                         <div class="task-list task-list-checkbox task-list-checkbox checkbox">
@@ -304,22 +255,13 @@ body .main-content-remark {
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                         </div>
-                    </li>
-                    <li class="main-content-task-ul-item">
-                        <div class="task-list task-list-checkbox task-list-checkbox checkbox">
-                            <input type="checkbox" class="checkbox" />
-                            <label></label>
-                        </div>
-                        <div class="task-list task-list-txt task-list-txt">
-                            <span>Typing Something</span>
-                        </div>
-                        <div class="task-list task-list-button task-list-button">
-                            <button type="button" class="btn btn-default btn-highlight">
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </button>
-                            <button type="button" class="btn btn-default btn-edit">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
+                        <div class="task-list task-list-detail">
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-file">&nbsp;</span>
+                            </div>
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-comment">&nbsp;</span>
+                            </div>
                         </div>
                     </li>
                     <li class="main-content-task-ul-item">
@@ -337,6 +279,34 @@ body .main-content-remark {
                             <button type="button" class="btn btn-default btn-edit">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
+                        </div>
+                        <div class="task-list task-list-detail">
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                <span class="task-list-detail-item-txt">5/14</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="main-content-task-ul-item">
+                        <div class="task-list task-list-checkbox task-list-checkbox checkbox">
+                            <input type="checkbox" class="checkbox" />
+                            <label></label>
+                        </div>
+                        <div class="task-list task-list-txt task-list-txt">
+                            <span>Typing Something</span>
+                        </div>
+                        <div class="task-list task-list-button task-list-button">
+                            <button type="button" class="btn btn-default btn-highlight">
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </button>
+                            <button type="button" class="btn btn-default btn-edit">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                        </div>
+                        <div class="task-list task-list-detail">
+                            <div class="task-list-detail-item">
+                                <span class="glyphicon glyphicon-comment">&nbsp;</span>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -370,7 +340,6 @@ body .main-content-remark {
             <div class="main-content-remark">1 task completed</div>
         </div>
     </div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -30,4 +30,16 @@
             $(this).parents(".main-content-task-ul-item").find(".task-list-txt").removeClass("task-list-txt__completed");
         }
     });
+
+
+    $(".input-group-txt").focus(function (e) {
+        e.preventDefault();
+
+        $(".input-group-detail").slideDown();
+    });
+
+    $(".input-group-detail-btn").click(function (e) {
+        e.preventDefault();
+        $(".input-group-detail").fadeOut();
+    });
 });;
