@@ -14,11 +14,17 @@
 
         $(this)
             .find("span")
-            .toggleClass("glyphicon-star")
-            .toggleClass("glyphicon-star-empty")
-            .toggleClass("task-list-button__highlight")
+                .toggleClass("glyphicon-star")
+                .toggleClass("glyphicon-star-empty")
+                .toggleClass("task-list-button__highlight")
             .parents(".main-content-task-ul-item")
-            .toggleClass("main-content-task-ul-item__highlight")
+                .toggleClass("main-content-task-ul-item__highlight");
+
+        if ($(this).parents(".main-content-task-ul-item").hasClass("main-content-task-ul-item__highlight")) {
+            $(this).parents("ul").prepend($(this).parents(".main-content-task-ul-item"));
+        }
+
+        // Do Save orders
     });
 
     $("input[type='checkbox']").change(function (e) {
@@ -29,6 +35,8 @@
         } else {
             $(this).parents(".main-content-task-ul-item").find(".task-list-txt").removeClass("task-list-txt__completed");
         }
+
+        // Do Save task Status
     });
 
 
@@ -60,6 +68,7 @@
             e2.preventDefault();
             $(".task-list-button__edit").removeClass("task-list-button__edit");
             $(".input-group-detail").fadeOut();
+            // Do save task edit
         })
     });
 });
