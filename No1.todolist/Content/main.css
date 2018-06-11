@@ -133,16 +133,27 @@ body .input-group-detail-btn {
   width: 100%;
 }
 body .input-group-detail-btn__cancel {
-  background-color: #fdfdfd;
+  background-color: #fff;
   color: #D0021B;
 }
+body .input-group-detail-btn__cancel:hover {
+  color: #D0021B;
+  background-color: #fdfdfd;
+}
 body .input-group-detail-btn__add {
-  background-color: #3982D7;
+  background-color: #4A90E2;
   color: #fdfdfd;
 }
-body .input-group-detail-btn__save {
-  background-color: #3982D7;
+body .input-group-detail-btn__add:hover {
   color: #fdfdfd;
+  background-color: #3982D7;
+}
+body .input-group-detail-btn__save {
+  background-color: #4A90E2;
+  color: #fdfdfd;
+}
+body .input-group-detail-btn__save:hover {
+  background-color: #3982D7;
 }
 body .main {
   display: none;

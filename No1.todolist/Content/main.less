@@ -209,18 +209,32 @@ body {
                 width: 100%;
 
                 &__cancel {
-                    background-color: #fdfdfd;
+                    background-color: #fff;
                     color: @WarningColor;
+
+                    &:hover {
+                        color: @WarningColor;
+                        background-color: #fdfdfd;
+                    }
                 }
 
                 &__add {
-                    background-color: #3982D7;
+                    background-color: @BgColor;
                     color: #fdfdfd;
+
+                    &:hover {
+                        color: #fdfdfd;
+                        background-color: #3982D7;
+                    }
                 }
 
                 &__save {
-                    background-color: #3982D7;
+                    background-color: @BgColor;
                     color: #fdfdfd;
+
+                    &:hover {
+                        background-color: #3982D7;
+                    }
                 }
             }
         }
