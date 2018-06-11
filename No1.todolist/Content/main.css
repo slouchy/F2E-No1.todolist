@@ -140,6 +140,10 @@ body .input-group-detail-btn__add {
   background-color: #3982D7;
   color: #fdfdfd;
 }
+body .input-group-detail-btn__save {
+  background-color: #3982D7;
+  color: #fdfdfd;
+}
 body .main {
   display: none;
   padding-top: 15px;
@@ -185,6 +189,10 @@ body .main-content-task-ul-item .task-list-button {
 }
 body .main-content-task-ul-item .task-list-button__highlight {
   color: #F5A623;
+}
+body .main-content-task-ul-item .task-list-button__edit {
+  background-color: #4A90E2;
+  color: #fff;
 }
 body .main-content-task-ul-item .task-list-detail {
   margin-left: 60px;

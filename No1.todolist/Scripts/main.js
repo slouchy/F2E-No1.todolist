@@ -42,4 +42,91 @@
         e.preventDefault();
         $(".input-group-detail").fadeOut();
     });
-});;
+
+    $(".btn-edit").click(function (e) {
+        e.preventDefault();
+        $(".edit-detail").fadeOut().remove(".edit-detail");
+        $(".task-list-button__edit").removeClass("task-list-button__edit");
+        $(this).addClass("task-list-button__edit");
+        $(this).parents(".main-content-task-ul-item")
+            .append(GetEditTaskHTML($(this).attr("data-id")))
+            .find(".edit-detail .input-group-detail").slideDown();
+        $(this).parents(".main-content-task-ul-item").find(".input-group-detail-btn__cancel").click(function (e2) {
+            e2.preventDefault();
+            $(".task-list-button__edit").removeClass("task-list-button__edit");
+            $(".input-group-detail").fadeOut();
+        })
+        $(this).parents(".main-content-task-ul-item").find(".input-group-detail-btn__save").click(function (e2) {
+            e2.preventDefault();
+            $(".task-list-button__edit").removeClass("task-list-button__edit");
+            $(".input-group-detail").fadeOut();
+        })
+    });
+});
+
+function GetEditTaskHTML(taskID) {
+    let editHTML = `<div class='edit-detail'>
+        <div class ="input-group-detail">
+            <div class ="row">
+                <div class ="col-xs-1"></div>
+                <div class ="col-xs-11">
+                    <span class ="glyphicon glyphicon-calendar">&nbsp;</span>
+                    <span class ="input-group-detail-title">Deadline</span>
+                </div>
+            </div>
+            <div class ="row">
+                <div class ="col-xs-2"></div>
+                <div class ="col-xs-5">
+                    <input type="date" class ="form-control input-group-detail-txt-date" placeholder="yyyy/MM/dd" />
+                </div>
+                <div class ="col-xs-4">
+                    <input type="time" class ="form-control input-group-detail-txt-time" placeholder="HH:mm" />
+                </div>
+            </div>
+            <div class ="row">
+                <div class ="col-xs-1"></div>
+                <div class ="col-xs-11">
+                    <span class ="glyphicon glyphicon-file">&nbsp; </span>
+                    <span class ="input-group-detail-title">File</span>
+                </div>
+            </div>
+            <div class ="row">
+                <div class ="col-xs-2"></div>
+                <div class ="col-xs-10">
+                    <button class ="btn btn-default">
+                        <span class ="glyphicon glyphicon-plus-sign"></span>
+                    </button>
+                </div>
+            </div>
+            <div class ="row">
+                <div class ="col-xs-1"></div>
+                <div class ="col-xs-11">
+                    <span class ="glyphicon glyphicon-comment">&nbsp; </span>
+                    <span class ="input-group-detail-title">Comment</span>
+                </div>
+            </div>
+            <div class ="row">
+                <div class ="col-xs-2"></div>
+                <div class ="col-xs-10">
+                    <textarea class ="input-group-detail-comment" placeholder="Type your memo here"></textarea>
+                </div>
+            </div>
+            <div>
+                <ul class ="nav nav-justified">
+                    <li>
+                        <button class ="btn btn-default input-group-detail-btn input-group-detail-btn__cancel">
+                            <span class ="glyphicon glyphicon-remove"></span>
+                            Cancel
+                        </button>
+                    </li>
+                    <li>
+                        <button class ="btn btn-common input-group-detail-btn input-group-detail-btn__save">
+                            <span class ="glyphicon glyphicon-floppy-save"></span> Save</button>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>`;
+    return editHTML;
+}
