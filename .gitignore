@@ -259,7 +259,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-/No1.todolist/Content/main.min.css
-/No1.todolist/Content/main.min.css
-/No1.todolist/Content/reset.min.css
-/No1.todolist/Content/main.css
+
